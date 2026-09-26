@@ -7,7 +7,7 @@ export function Eyebrow({ children }) {
   );
 }
 
-export default function Hero({ onNew }) {
+export default function Hero({ onNew, projectCount = 0 }) {
   return (
     <section className="py-[57px] pb-9 max-sm:pt-[43px]">
       <Eyebrow>YOUR WORKSPACE</Eyebrow>
@@ -23,13 +23,22 @@ export default function Hero({ onNew }) {
             <br className="max-[420px]:hidden" /> and the small steps that move
             it forward.
           </p>
+          {projectCount > 0 && (
+            <p className="mb-0 mt-2 font-mono text-[9px] tracking-[0.1em] text-[#a0a197]">
+              PRESS <kbd className="fn-kbd">N</kbd> FOR A NEW PROJECT OR{' '}
+              <kbd className="fn-kbd">?</kbd> FOR SHORTCUTS
+            </p>
+          )}
         </div>
         <button
           type="button"
           onClick={onNew}
           className="inline-flex h-[43px] shrink-0 cursor-pointer items-center gap-2.5 rounded border-0 bg-btn px-[17px] font-sans text-[12px] font-medium text-white transition hover:-translate-y-px hover:bg-moss-dark max-sm:mt-[5px] max-sm:whitespace-nowrap max-sm:px-3 max-[420px]:mt-5"
         >
-          <span className="text-[19px] font-light">+</span> New project
+          <span className="text-[19px] font-light" aria-hidden="true">
+            +
+          </span>{' '}
+          New project
         </button>
       </div>
     </section>
