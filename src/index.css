@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #252d28;
+  --color-moss: #596d50;
+  --color-moss-dark: #40543a;
+  --color-btn: #53694c;
+  --color-paper: #fbfaf6;
+  --color-cream: #f7f5ef;
+  --color-line: #e6e4db;
+  --color-muted: #858b82;
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "Manrope", sans-serif;
+  --font-mono: "DM Mono", monospace;
+}
+
+html,
+body {
+  margin: 0;
+  min-width: 320px;
+  background-color: #f7f5ef;
+  background-image:
+    linear-gradient(rgba(112, 130, 105, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(112, 130, 105, 0.055) 1px, transparent 1px);
+  background-size: 28px 28px;
+  color: #252d28;
+  font-family: "DM Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.clamp-title {
+  font-size: clamp(39px, 6vw, 58px);
+  line-height: 1.08;
+  letter-spacing: -3.2px;
+}
+
+/* Custom checkbox to match original quiet style */
+.fn-checkbox {
+  appearance: none;
+  flex: none;
+  margin: 1px 0 0;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #c9cbbf;
+  border-radius: 3px;
+  background: #fffefa;
+  cursor: pointer;
+  position: relative;
+}
+.fn-checkbox:checked {
+  background: #718466;
+  border-color: #718466;
+}
+.fn-checkbox:checked::after {
+  content: "✓";
+  position: absolute;
+  inset: -1px 0 0;
+  color: white;
+  font-size: 10px;
+  text-align: center;
+  line-height: 14px;
+}
+
+.fn-text-field {
+  display: block;
+  width: 100%;
+  border: 1px solid #e3e2d9;
+  background: #fffefa;
+  border-radius: 3px;
+  padding: 10px 11px;
+  font-size: 12px;
+  line-height: 1.5;
+  font-family: "DM Sans", sans-serif;
+  color: #343a32;
+  outline: none;
+  resize: vertical;
+}
+.fn-text-field:focus {
+  border-color: #95a18b;
+  box-shadow: 0 0 0 2px #dce2d3;
+}
+.fn-text-field::placeholder {
+  color: #b1b1a8;
+}
